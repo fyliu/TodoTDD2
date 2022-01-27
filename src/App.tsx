@@ -16,7 +16,12 @@ export default function App() {
     <>
       <div>Task Tracker</div>
       {showAddTaskModal ? (
-        <AddTaskModal onSubmit={addTaskHandler} />
+        <AddTaskModal
+          onSubmit={addTaskHandler}
+          onCancel={() => {
+            setShowAddTaskModal(false);
+          }}
+        />
       ) : (
         <button
           onClick={() => {
