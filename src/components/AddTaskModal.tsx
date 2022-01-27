@@ -9,7 +9,9 @@ type Props = {
 export const AddTaskModal: React.FC<Props> = ({ onSubmit, onCancel }) => {
   const [title, setTitle] = useState("");
 
-  const onSubmitHandler = () => {};
+  const onSubmitHandler = (e) => {
+    onSubmit({ title: title, date: new Date(new Date().toDateString()) });
+  };
 
   const onCancelHandler = () => {};
 
@@ -26,12 +28,7 @@ export const AddTaskModal: React.FC<Props> = ({ onSubmit, onCancel }) => {
           setTitle(e.target.value);
         }}
       />
-      <button
-        disabled={!title}
-        onClick={(e) => {
-          onSubmit({ title: title, date: new Date(new Date().toDateString()) });
-        }}
-      >
+      <button disabled={!title} onClick={onSubmitHandler}>
         Submit
       </button>
     </>
