@@ -41,12 +41,14 @@ describe("App", () => {
 
   describe("Happy path integration test", () => {
     // TODO: Step 15
-    it.skip("should successfully add tasks to the list", () => {
+    it("should successfully add tasks to the list", async () => {
       userEvent.click(screen.getByText("Add Task"));
       userEvent.type(screen.getByLabelText("Task Title"), "AddedTask1");
       userEvent.click(screen.getByText("Submit"));
 
-      waitFor(() => screen.getByText("AddedTask1"));
+      await waitFor(() => {
+        expect(screen.getByText("AddedTask1")).toBeInTheDocument();
+      });
     });
 
     // TODO: Step 16
