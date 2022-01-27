@@ -22,6 +22,7 @@ export const AddTaskModal: React.FC<Props> = ({ onSubmit, onCancel }) => {
   const onKeyHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
     switch (e.code) {
       case "Enter":
+        e.preventDefault();
         if (title) {
           onSubmitHandler();
         } else {
@@ -32,6 +33,7 @@ export const AddTaskModal: React.FC<Props> = ({ onSubmit, onCancel }) => {
 
   const onKeyDownHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.code === "Escape") {
+      e.preventDefault();
       onCancel();
     }
   };
