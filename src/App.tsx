@@ -16,8 +16,8 @@ export default function App() {
     setTasks((prev) => [...prev, taskItem]);
   };
 
-  const onDeleteHandler = () => {
-    setTasks((prev) => removeByIndex(prev, 1));
+  const onDeleteHandler = (index: number) => {
+    setTasks((prev) => removeByIndex(prev, index));
   };
 
   return (
