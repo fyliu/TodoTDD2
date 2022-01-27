@@ -13,5 +13,10 @@ export const AddTaskModal: React.FC<Props> = ({ onSubmit, onCancel }) => {
 
   const onKeyHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {};
 
-  return <></>;
+  return (
+    <>
+      <label htmlFor="title">Task Title</label>
+      <input id="title" name="Task Title" placeholder="Task Title" />
+    </>
+  );
 };
