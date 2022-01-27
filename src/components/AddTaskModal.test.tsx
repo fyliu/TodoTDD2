@@ -21,7 +21,8 @@ describe("Add Task Modal", () => {
 
   // TODO: Step 7
   it("disables the submit button if required fields are not filled", () => {
-    userEvent.type(screen.getByLabelText("Task Title"), "");
+    //userEvent.type(screen.getByLabelText("Task Title"), "");
+    userEvent.click(screen.getByLabelText("Task Title"));
 
     expect(screen.getByText("Submit")).toBeDisabled();
   });
