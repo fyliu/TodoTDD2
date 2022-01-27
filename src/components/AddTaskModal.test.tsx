@@ -36,7 +36,7 @@ describe("Add Task Modal", () => {
   });
 
   // TODO: Step 9
-  it.skip("calls onSubmit with the proper input values when Submit is clicked", () => {
+  it("calls onSubmit with the proper input values when Submit is clicked", () => {
     const titleInput = screen.getByLabelText("Task Title") as HTMLInputElement;
 
     userEvent.type(titleInput, "Test Title");
