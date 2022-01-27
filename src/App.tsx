@@ -7,9 +7,17 @@ export default function App() {
   const [showAddTaskModal, setShowAddTaskModal] = useState(false);
   const [tasks, setTasks] = useState<TaskItem[]>([]);
 
+  const removeByIndex = (array: TaskItem[], index: number) => {
+    return array.filter((item, i) => i !== index);
+  };
+
   const addTaskHandler = (taskItem: TaskItem) => {
     setShowAddTaskModal(false);
     setTasks((prev) => [...prev, taskItem]);
+  };
+
+  const onDeleteHandler = () => {
+    setTasks((prev) => removeByIndex(prev, 1));
   };
 
   return (
@@ -31,7 +39,7 @@ export default function App() {
           Add Task
         </button>
       )}
-      <TaskList tasks={tasks} />
+      <TaskList tasks={tasks} onDelete={onDeleteHandler} />
     </>
   );
 }

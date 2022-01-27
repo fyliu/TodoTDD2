@@ -52,7 +52,7 @@ describe("App", () => {
     });
 
     // TODO: Step 16
-    it.skip("should successfully delete the correct task from the list", async () => {
+    it("should successfully delete the correct task from the list", async () => {
       userEvent.click(screen.getByText("Add Task"));
       userEvent.type(screen.getByLabelText("Task Title"), "AddedTask1");
       userEvent.click(screen.getByText("Submit"));
