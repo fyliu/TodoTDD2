@@ -9,8 +9,6 @@ export const TaskList: React.FC<Props> = ({ tasks }) => (
   <>
     {tasks.length === 0
       ? "No tasks have been added yet."
-      : tasks.map((task) => (
-          <TaskListItem date={task.date} title={task.title} />
-        ))}
+      : tasks.map((task) => <TaskListItem date={task.date} title={task.title} key={task.title} />)}
   </>
 );
