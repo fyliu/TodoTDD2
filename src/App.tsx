@@ -11,7 +11,7 @@ export default function App() {
 
   return (
     <>
-      Task Tracker
+      <div>Task Tracker</div>
       {showAddTaskModal ? (
         <AddTaskModal onSubmit={addTaskHandler} />
       ) : (
