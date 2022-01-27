@@ -15,7 +15,7 @@ describe("App", () => {
 
   describe("AddTaskModal", () => {
     // TODO: Step 12
-    it.skip("hides the `Add Task` button when 'Add Task' is clicked", () => {
+    it("hides the `Add Task` button when 'Add Task' is clicked", () => {
       userEvent.click(screen.getByText("Add Task"));
 
       expect(screen.queryByText("Add Task")).not.toBeInTheDocument();
@@ -67,9 +67,7 @@ describe("App", () => {
       expect(await screen.findByText("AddedTask2"));
       expect(await screen.findByText("AddedTask3"));
 
-      const addedTask2Button = (
-        await screen.findAllByText("Delete")
-      )[1] as HTMLButtonElement;
+      const addedTask2Button = (await screen.findAllByText("Delete"))[1] as HTMLButtonElement;
 
       userEvent.click(addedTask2Button);
 
