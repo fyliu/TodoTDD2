@@ -68,7 +68,7 @@ describe("Add Task Modal", () => {
 
   describe("Keyboard Shortcuts", () => {
     // TODO: Step 17
-    it.skip("clears the task title field when user submits using the enter key", () => {
+    it("clears the task title field when user submits using the enter key", () => {
       const titleInput = screen.getByLabelText(
         "Task Title"
       ) as HTMLInputElement;

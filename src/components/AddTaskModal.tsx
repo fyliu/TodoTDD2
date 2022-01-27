@@ -18,7 +18,12 @@ export const AddTaskModal: React.FC<Props> = ({ onSubmit, onCancel }) => {
     onCancel();
   };
 
-  const onKeyHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {};
+  const onKeyHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    switch (e.code) {
+      case "Enter":
+        onSubmitHandler();
+    }
+  };
 
   return (
     <>
@@ -31,6 +36,7 @@ export const AddTaskModal: React.FC<Props> = ({ onSubmit, onCancel }) => {
         onChange={(e) => {
           setTitle(e.target.value);
         }}
+        onKeyPress={onKeyHandler}
       />
       <button disabled={!title} onClick={onSubmitHandler}>
         Submit
