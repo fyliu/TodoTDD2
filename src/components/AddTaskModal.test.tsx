@@ -26,7 +26,7 @@ describe("Add Task Modal", () => {
     expect(screen.getByText("Submit")).toBeDisabled();
   });
   // TODO: Step 8
-  it.skip("enables submit button if required fields are provided", () => {
+  it("enables submit button if required fields are provided", () => {
     const titleInput = screen.getByLabelText("Task Title") as HTMLInputElement;
 
     userEvent.type(titleInput, "Test Title");

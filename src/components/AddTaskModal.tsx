@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { TaskItem } from "./TaskListItem";
 
 type Props = {
@@ -7,6 +7,8 @@ type Props = {
 };
 
 export const AddTaskModal: React.FC<Props> = ({ onSubmit, onCancel }) => {
+  const [title, setTitle] = useState("");
+
   const onSubmitHandler = () => {};
 
   const onCancelHandler = () => {};
@@ -16,8 +18,15 @@ export const AddTaskModal: React.FC<Props> = ({ onSubmit, onCancel }) => {
   return (
     <>
       <label htmlFor="title">Task Title</label>
-      <input id="title" name="Task Title" placeholder="Task Title" />
-      <button disabled={true}>Submit</button>
+      <input
+        id="title"
+        name="Task Title"
+        placeholder="Task Title"
+        onChange={(e) => {
+          setTitle(e.target.value);
+        }}
+      />
+      <button disabled={!title}>Submit</button>
     </>
   );
 };
