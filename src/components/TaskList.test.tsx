@@ -13,7 +13,7 @@ describe("TaskList", () => {
   });
 
   // TODO: Step 5
-  it.skip("correctly renders a list of TaskItems when provided", async () => {
+  it("correctly renders a list of TaskItems when provided", async () => {
     render(
       <TaskList
         tasks={

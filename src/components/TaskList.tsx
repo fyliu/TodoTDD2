@@ -1,10 +1,16 @@
 import React from "react";
-import { TaskItem } from "./TaskListItem";
+import { TaskItem, TaskListItem } from "./TaskListItem";
 
 type Props = {
   tasks: TaskItem[];
 };
 
 export const TaskList: React.FC<Props> = ({ tasks }) => (
-  <>{tasks.length === 0 ? "No tasks have been added yet." : <div> </div>}</>
+  <>
+    {tasks.length === 0
+      ? "No tasks have been added yet."
+      : tasks.map((task) => (
+          <TaskListItem date={task.date} title={task.title} />
+        ))}
+  </>
 );
