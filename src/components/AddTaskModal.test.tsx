@@ -44,7 +44,7 @@ describe("Add Task Modal", () => {
 
     expect(mockOnClick).toHaveBeenCalledWith({
       title: "Test Title",
-      date: new Date().toDateString()
+      date: new Date(new Date().toDateString())
     });
   });
 

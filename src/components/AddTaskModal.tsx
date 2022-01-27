@@ -29,7 +29,7 @@ export const AddTaskModal: React.FC<Props> = ({ onSubmit, onCancel }) => {
       <button
         disabled={!title}
         onClick={(e) => {
-          onSubmit({ title: title, date: new Date().toDateString() });
+          onSubmit({ title: title, date: new Date(new Date().toDateString()) });
         }}
       >
         Submit
