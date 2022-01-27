@@ -5,13 +5,15 @@ import { TaskItem } from "./components/TaskListItem";
 export default function App() {
   const [showAddTaskModal, setShowAddTaskModal] = useState(false);
 
-  const addTaskHandler = (taskItem: TaskItem) => {};
+  const addTaskHandler = (taskItem: TaskItem) => {
+    setShowAddTaskModal(false);
+  };
 
   return (
     <>
       Task Tracker
       {showAddTaskModal ? (
-        <AddTaskModal />
+        <AddTaskModal onSubmit={addTaskHandler} />
       ) : (
         <button
           onClick={() => {

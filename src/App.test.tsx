@@ -29,9 +29,10 @@ describe("App", () => {
     });
 
     // TODO: Step 14
-    it.skip("closes the modal and reveals the `Add Task` button when task is submitted", () => {
+    it("closes the modal and reveals the `Add Task` button when task is submitted", () => {
       userEvent.click(screen.getByText("Add Task"));
       userEvent.type(screen.getByLabelText("Task Title"), "Test Title");
+      userEvent.click(screen.getByText("Submit"));
 
       expect(screen.queryByText("Task Title")).not.toBeInTheDocument();
       expect(screen.queryByText("Add Task")).toBeInTheDocument();
