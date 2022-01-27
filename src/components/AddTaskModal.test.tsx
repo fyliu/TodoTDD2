@@ -88,10 +88,10 @@ describe("Add Task Modal", () => {
     });
 
     // TODO: Step 19
-    it.skip("calls onCancel when user presses Escape", () => {
+    it("calls onCancel when user presses Escape", async () => {
       userEvent.type(screen.getByLabelText("Task Title"), "{escape}");
 
-      waitFor(() => expect(mockOnCancel).toHaveBeenCalled());
+      await waitFor(() => expect(mockOnCancel).toHaveBeenCalled());
     });
   });
 });
