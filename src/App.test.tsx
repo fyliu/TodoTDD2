@@ -52,7 +52,7 @@ describe("App", () => {
     });
 
     // TODO: Step 16
-    it("should successfully delete the correct task from the list", async () => {
+    it("should successfully delete the second task from the list", async () => {
       userEvent.click(screen.getByText("Add Task"));
       userEvent.type(screen.getByLabelText("Task Title"), "AddedTask1");
       userEvent.click(screen.getByText("Submit"));
@@ -74,6 +74,30 @@ describe("App", () => {
       expect(await screen.findByText("AddedTask1")).toBeInTheDocument();
       expect(await screen.findByText("AddedTask3")).toBeInTheDocument();
       expect(await screen.queryByText("AddedTask2")).not.toBeInTheDocument();
+    });
+
+    it("should successfully delete the third task from the list", async () => {
+      userEvent.click(screen.getByText("Add Task"));
+      userEvent.type(screen.getByLabelText("Task Title"), "AddedTask1");
+      userEvent.click(screen.getByText("Submit"));
+      userEvent.click(screen.getByText("Add Task"));
+      userEvent.type(screen.getByLabelText("Task Title"), "AddedTask2");
+      userEvent.click(screen.getByText("Submit"));
+      userEvent.click(screen.getByText("Add Task"));
+      userEvent.type(screen.getByLabelText("Task Title"), "AddedTask3");
+      userEvent.click(screen.getByText("Submit"));
+
+      expect(await screen.findByText("AddedTask1"));
+      expect(await screen.findByText("AddedTask2"));
+      expect(await screen.findByText("AddedTask3"));
+
+      const addedTask2Button = (await screen.findAllByText("Delete"))[2] as HTMLButtonElement;
+
+      userEvent.click(addedTask2Button);
+
+      expect(await screen.findByText("AddedTask1")).toBeInTheDocument();
+      expect(await screen.findByText("AddedTask2")).toBeInTheDocument();
+      expect(await screen.queryByText("AddedTask3")).not.toBeInTheDocument();
     });
   });
 });
