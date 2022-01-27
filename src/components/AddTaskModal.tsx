@@ -11,6 +11,7 @@ export const AddTaskModal: React.FC<Props> = ({ onSubmit, onCancel }) => {
 
   const onSubmitHandler = () => {
     onSubmit({ title: title, date: new Date(new Date().toDateString()) });
+    setTitle("");
   };
 
   const onCancelHandler = () => {};
@@ -24,6 +25,7 @@ export const AddTaskModal: React.FC<Props> = ({ onSubmit, onCancel }) => {
         id="title"
         name="Task Title"
         placeholder="Task Title"
+        value={title}
         onChange={(e) => {
           setTitle(e.target.value);
         }}

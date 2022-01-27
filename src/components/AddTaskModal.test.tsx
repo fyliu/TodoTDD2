@@ -49,7 +49,7 @@ describe("Add Task Modal", () => {
   });
 
   // TODO: Step 10
-  it.skip("clears the task title field when submit is clicked", () => {
+  it("clears the task title field when submit is clicked", () => {
     const titleInput = screen.getByLabelText("Task Title") as HTMLInputElement;
 
     userEvent.type(titleInput, "Test Title");
