@@ -38,7 +38,7 @@ export const AddTaskModal: React.FC<Props> = ({ onSubmit, onCancel }) => {
 
   return (
     <>
-      {titleError}
+      <div>{titleError}</div>
       <label htmlFor="title">Task Title</label>
       <input
         id="title"
