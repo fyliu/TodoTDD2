@@ -8,6 +8,7 @@ type Props = {
 
 export const AddTaskModal: React.FC<Props> = ({ onSubmit, onCancel }) => {
   const [title, setTitle] = useState("");
+  const [titleError, setTitleError] = useState("");
 
   const onSubmitHandler = () => {
     onSubmit({ title: title, date: new Date(new Date().toDateString()) });
@@ -21,12 +22,17 @@ export const AddTaskModal: React.FC<Props> = ({ onSubmit, onCancel }) => {
   const onKeyHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
     switch (e.code) {
       case "Enter":
-        onSubmitHandler();
+        if (title) {
+          onSubmitHandler();
+        } else {
+          setTitleError("Please enter a title.");
+        }
     }
   };
 
   return (
     <>
+      {titleError}
       <label htmlFor="title">Task Title</label>
       <input
         id="title"

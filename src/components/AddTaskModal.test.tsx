@@ -81,7 +81,7 @@ describe("Add Task Modal", () => {
     });
 
     // TODO: Step 18
-    it.skip("displays an error message if user presses Enter while required fields are empty", () => {
+    it("displays an error message if user presses Enter while required fields are empty", () => {
       userEvent.type(screen.getByLabelText("Task Title"), "{enter}");
 
       expect(screen.getByText("Please enter a title."));
