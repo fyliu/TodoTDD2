@@ -9,7 +9,7 @@ type Props = {
 export const AddTaskModal: React.FC<Props> = ({ onSubmit, onCancel }) => {
   const [title, setTitle] = useState("");
 
-  const onSubmitHandler = (e) => {
+  const onSubmitHandler = () => {
     onSubmit({ title: title, date: new Date(new Date().toDateString()) });
   };
 
