@@ -30,6 +30,12 @@ export const AddTaskModal: React.FC<Props> = ({ onSubmit, onCancel }) => {
     }
   };
 
+  const onKeyDownHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.code === "Escape") {
+      onCancel();
+    }
+  };
+
   return (
     <>
       {titleError}
@@ -43,6 +49,7 @@ export const AddTaskModal: React.FC<Props> = ({ onSubmit, onCancel }) => {
           setTitle(e.target.value);
         }}
         onKeyPress={onKeyHandler}
+        onKeyDown={onKeyDownHandler}
       />
       <button disabled={!title} onClick={onSubmitHandler}>
         Submit
