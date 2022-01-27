@@ -60,7 +60,7 @@ describe("Add Task Modal", () => {
   });
 
   // TODO: Step 11
-  it.skip("calls onCancel when 'Cancel' button is clicked", () => {
+  it("calls onCancel when 'Cancel' button is clicked", () => {
     userEvent.click(screen.getByText("Cancel"));
 
     waitFor(() => expect(mockOnCancel).toHaveBeenCalled());

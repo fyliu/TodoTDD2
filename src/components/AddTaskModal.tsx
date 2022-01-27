@@ -14,7 +14,9 @@ export const AddTaskModal: React.FC<Props> = ({ onSubmit, onCancel }) => {
     setTitle("");
   };
 
-  const onCancelHandler = () => {};
+  const onCancelHandler = () => {
+    onCancel();
+  };
 
   const onKeyHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {};
 
@@ -33,6 +35,7 @@ export const AddTaskModal: React.FC<Props> = ({ onSubmit, onCancel }) => {
       <button disabled={!title} onClick={onSubmitHandler}>
         Submit
       </button>
+      <button onClick={onCancelHandler}>Cancel</button>
     </>
   );
 };
