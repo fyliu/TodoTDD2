@@ -22,7 +22,7 @@ describe("App", () => {
     });
 
     // TODO: Step 13
-    it.skip("opens the TaskModal when 'Add Task' is clicked", () => {
+    it("opens the TaskModal when 'Add Task' is clicked", () => {
       userEvent.click(screen.getByText("Add Task"));
 
       expect(screen.queryByText("Task Title")).toBeInTheDocument();
