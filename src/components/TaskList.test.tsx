@@ -6,7 +6,7 @@ import { TaskItem } from "./TaskListItem";
 
 describe("TaskList", () => {
   // TODO: Step 4
-  it.skip("displays a default message when no tasks have been provided", () => {
+  it("displays a default message when no tasks have been provided", () => {
     render(<TaskList tasks={[]} />);
 
     expect(screen.getByText("No tasks have been added yet."));

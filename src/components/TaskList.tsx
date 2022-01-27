@@ -5,4 +5,6 @@ type Props = {
   tasks: TaskItem[];
 };
 
-export const TaskList: React.FC<Props> = ({ tasks }) => <></>;
+export const TaskList: React.FC<Props> = ({ tasks }) => (
+  <>{tasks.length === 0 ? "No tasks have been added yet." : <div> </div>}</>
+);
