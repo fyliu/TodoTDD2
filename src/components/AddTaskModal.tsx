@@ -44,8 +44,6 @@ export const AddTaskModal: React.FC<Props> = ({ onSubmit, onCancel }) => {
       <label htmlFor="title">Task Title</label>
       <input
         id="title"
-        name="Task Title"
-        placeholder="Task Title"
         value={title}
         onChange={(e) => {
           setTitle(e.target.value);

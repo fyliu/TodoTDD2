@@ -16,7 +16,7 @@ describe("Add Task Modal", () => {
   // TODO: Step 6
   it("renders the task title input field", () => {
     expect(screen.getByLabelText("Task Title"));
-    // expect(screen.getByRole("input", { name: "Task Title" }));
+    expect(screen.findByRole("input", { name: "Task Title" }));
   });
 
   // TODO: Step 7
