@@ -17,6 +17,7 @@ export const AddTaskModal: React.FC<Props> = ({ onSubmit, onCancel }) => {
     <>
       <label htmlFor="title">Task Title</label>
       <input id="title" name="Task Title" placeholder="Task Title" />
+      <button disabled={true}>Submit</button>
     </>
   );
 };
