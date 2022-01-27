@@ -5,7 +5,7 @@ import { AddTaskButton } from "./AddTaskButton";
 
 describe("Add Task", () => {
   // TODO: Step 2
-  it.skip("triggers the onClick handler when clicked", () => {
+  it("triggers the onClick handler when clicked", () => {
     const mockOnClick = jest.fn();
     render(<AddTaskButton toggleModal={mockOnClick} />);
 
